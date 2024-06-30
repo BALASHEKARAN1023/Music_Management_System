@@ -1,19 +1,19 @@
 package com.playlists.music.player;
 import jakarta.persistence.*;
 @Entity
-@Table(name = "playlist")
+@Table(name = "Playlist")
 public class Playlist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "playlist_id")
+    @Column(name = "PlaylistID")
     private int playlistId;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "UserID")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "songId")
+    @JoinColumn(name = "SongID")
     private Song song;
 
     @Column(nullable = false)
@@ -22,7 +22,6 @@ public class Playlist {
     private String description;
 
     // Getters and setters
-
     public int getPlaylistId() {
         return playlistId;
     }

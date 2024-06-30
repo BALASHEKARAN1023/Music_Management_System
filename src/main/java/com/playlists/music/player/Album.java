@@ -3,11 +3,11 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 @Entity
-@Table(name = "album")
+@Table(name = "Album")
 public class Album {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "album_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "AlbumID")
     private int albumId;
 
     @Column(nullable = false)
@@ -15,7 +15,6 @@ public class Album {
 
     @Column(nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private Date releaseDate;
-
 
     // Getters and setters
 

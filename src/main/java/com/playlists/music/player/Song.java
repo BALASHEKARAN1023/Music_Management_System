@@ -2,16 +2,16 @@ package com.playlists.music.player;
 import jakarta.persistence.*;
 import java.sql.Time;
 import java.time.LocalDateTime;
-import java.util.Date;
+
 @Entity
-@Table(name = "song")
+@Table(name = "Song")
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "song_id")
+    @Column(name = "SongID")
     private int songId;
-    @Column(name = "release_date", nullable = false)
-    private LocalDateTime releaseDate;
+    @Column(name = "ReleaseDate")
+    private String releaseDate;
     @Column(nullable = false)
     private String songTitle;
 
@@ -19,11 +19,11 @@ public class Song {
     private Time duration;
 
     @ManyToOne
-    @JoinColumn(name = "albumId")
+    @JoinColumn(name = "AlbumID")
     private Album album;
 
     @ManyToOne
-    @JoinColumn(name = "artistId")
+    @JoinColumn(name = "ArtistID")
     private Artist artist;
 
     // Getters and setters
@@ -53,11 +53,11 @@ public class Song {
     }
 
 
-    public LocalDateTime getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(LocalDateTime releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 

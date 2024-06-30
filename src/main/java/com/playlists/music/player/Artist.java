@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "artist")
+@Table(name = "Artist")
 public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "artist_id")
+    @Column(name = "ArtistID")
     private int artistId;
 
     @Column(nullable = false)
